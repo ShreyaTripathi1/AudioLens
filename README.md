@@ -44,3 +44,23 @@ Lightweight and great for real-time applications.
 ```
 pip install -r requirements.txt
 ```
+
+---
+
+## *Technologies Used*  
+
+1. **Image Capturing:**  
+   - **Used:** JavaScript (`navigator.mediaDevices.getUserMedia`) with Python (`eval_js`) in Colab.  
+   - **Explanation:** Since Colab runs in a browser, we can’t access the webcam directly with Python. Instead, we use JavaScript to activate the webcam and capture images, which are then processed by Python for object detection.  
+
+2. **Object Detection:**  
+   - **Used:** YOLO (You Only Look Once) Model from the `ultralytics` library.  
+   - **Explanation:** YOLO processes the captured images to detect objects in real time, identifying their class, position, and bounding boxes.  
+
+3. **Text-to-Speech (TTS):**  
+   - **Used:** `gTTS` (Google Text-to-Speech).  
+   - **Explanation:** Converts the detected object descriptions into spoken words, providing audio feedback for visually impaired users. It’s preferred for its natural-sounding voice.  
+
+4. **Text Generation:**  
+   - **Used:** `transformers` library with `facebook/bart-large-cnn` model.  
+   - **Explanation:** Summarizes the detected objects into coherent sentences before converting them to speech, making the descriptions more natural and easy to understand.
